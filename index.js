@@ -26,16 +26,16 @@ var canvas = new fabric.Canvas('myCanvas');
 //     console.log('clear');
 //     canvas.clear();
 // }
-// canvas.on('mouse:wheel', function(opt) {
-//     var delta = opt.e.deltaY;
-//     var zoom = canvas.getZoom();
-//     zoom *= 0.999 ** delta;
-//     if (zoom > 1) zoom = 1;
-//     if (zoom < 0.01) zoom = 0.01;
-//     canvas.setZoom(zoom);
-//     // opt.e.preventDefault();
-//     // opt.e.stopPropagation();
-//   });
+canvas.on('mouse:down', function(opt) {
+    var delta = opt.e.deltaY;
+    var zoom = canvas.getZoom();
+    zoom *= 0.999 ** delta;
+    if (zoom > 1) zoom = 1;
+    if (zoom < 0.01) zoom = 0.01;
+    canvas.setZoom(zoom);
+    // opt.e.preventDefault();
+    // opt.e.stopPropagation();
+  });
 // var Btn = document.getElementById('uploadedImg');
 // var Btn1 = document.getElementById('clear');
 // Btn.addEventListener('click',imageGenerator);
